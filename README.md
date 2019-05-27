@@ -1,2 +1,2 @@
 # mess
-random patterns from js
+random patterns from js canvas
