@@ -1,3 +1,4 @@
 # mess
-random patterns from js canvas
+a project demonstrating the concept of randomness
+
 `code is life`
