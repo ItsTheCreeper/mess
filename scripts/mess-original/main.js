@@ -2,7 +2,7 @@ var canvas = document.getElementById("myCanvas");
 canvas.width = document.body.clientWidth;
 canvas.height = window.screen.availHeight;
 
-document.body.style = "overflow: hidden; margin: 0; ";
+document.body.style = "overflow: hidden; margin: 0;";
 
 var myCircle;
 
@@ -15,8 +15,8 @@ var Circle = function () {
         ctx.beginPath();
         ctx.arc(this.x, this.y, this.radius, 0, 2*Math.PI);
         ctx.stroke();
-    }
-}
+    };
+};
 
 setInterval(function() {
     myCircle = new Circle();
