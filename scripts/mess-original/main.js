@@ -2,6 +2,8 @@ var canvas = document.getElementById("myCanvas");
 canvas.width = document.body.clientWidth;
 canvas.height = window.screen.availHeight;
 
+document.body.style = "overflow: hidden; margin: 0; ";
+
 var myCircle;
 
 var Circle = function () {
