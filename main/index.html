@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en" id="html">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link rel="stylesheet" type="text/css" href="main.css" />
+    <link href="https://fonts.googleapis.com/css?family=Inconsolata&display=swap" rel="stylesheet" />
+    <title>mess</title>
+</head>
+
+<body>
+    <div class="main" id="main">
+        <h1 class="main-header">mess- please select a mode.</h1>
+        <div class="select">
+            <select class="main-select" id="selection">
+                <option value="original" class="main-option">original</option>
+                <option value="slow" class="main-option">slow</option>
+                <option value="colorful" class="main-option">colorful</option>
+            </select>
+            <button class="main-submit-button" onclick="run()">run!</button>
+        </div>
+        <p class="main-note">note: press space to return.</p>
+    </div>
+    <canvas id="myCanvas" class="myCanvas"></canvas>
+    <script src="main.js"></script>
+    <script id="script"></script>
+</body>
+
+</html>
