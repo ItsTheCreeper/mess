@@ -1,10 +1,15 @@
+var canvas = document.getElementById("myCanvas");
 
 function run() {
     document.getElementById("main").style.display = "none";
     document.body.style = "background-image: none !important";
     document.getElementById("html").style = "background-image: none !important";
-    document.getElementById("myCanvas").style.display = "block";
-    document.getElementById("myCanvas").style.visibility = "visible";
+    canvas.width = document.body.clientWidth;
+    canvas.height = window.screen.availHeight;
+    canvas.style.display = "block";
+    canvas.style.visibility = "visible";
+
+    document.body.style = "overflow: hidden; margin: 0; background: none !important";
 
     var option = document.getElementById("selection");
     var script = document.getElementById("script");
@@ -17,7 +22,7 @@ function run() {
             script.src = "../scripts/mess-slow.js";
             break;
         case "colorful":
-            script.src = "../scripts/mess-colorful.js"; 
+            script.src = "../scripts/mess-colorful.js";
             break;
         default:
             alert("error: incorrect value");
