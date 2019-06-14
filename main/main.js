@@ -24,6 +24,9 @@ function run() {
         case "colorful":
             script.src = "../scripts/mess-colorful.js";
             break;
+        case "wide":
+            script.src = "../scripts/mess-wide.js";
+            break;
         default:
             alert("error: incorrect value");
             break;
