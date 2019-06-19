@@ -24,7 +24,7 @@ var PixelBoard = function() {
     };
     this.Display = function() {
         var ctx = canvas.getContext("2d");
-        var x = 5, y = 5;
+        var x = 0, y = 0;
         for(var i = 0; i < this.SquareArray.length; i++) {
             for (var j = 0; j < this.SquareArray[i].length; j++) {
                  if (this.SquareArray[i][j] == 1) {
@@ -32,13 +32,12 @@ var PixelBoard = function() {
                  } else {
                      ctx.fillStyle = "white";
                  }
-                 ctx.lineWidth = 5;
                  ctx.fillRect(x, y, 25, 25);
                  ctx.stroke();
-                 x += 35;
+                 x += 25;
             }
-            y += 35;
-            x = 5;
+            y += 25;
+            x = 0;
         }
     };
     this.Color = function() {
@@ -51,9 +50,9 @@ var PixelBoard = function() {
 };
 
 Board = new PixelBoard();
-Board.GenerateSquares(Math.ceil(canvas.height / 35), Math.ceil(canvas.width / 35));
+Board.GenerateSquares(Math.ceil(canvas.height / 25), Math.ceil(canvas.width / 25));
 
 setInterval(function() {
     Board.GenerateValues();
     Board.Display();
-}, 500);
+}, 0);
