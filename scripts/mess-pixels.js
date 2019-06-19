@@ -4,13 +4,10 @@ var Board;
 var PixelBoard = function() {
     this.SquareArray = [];
     this.SquareRow = [];
-    this.GenerateSquares = function(Count) {
-        if (Count > 25) {
-            Count = 25;
-        }
-        for (var i = 0; i < Count; i++) {
+    this.GenerateSquares = function(Height, Length) {
+        for (var i = 0; i < Height; i++) {
             this.SquareRow = [];
-            for (var j = 0; j < Count; j++) {
+            for (var j = 0; j < Length; j++) {
                 this.SquareRow.push(0);
             }
             this.SquareArray.push(this.SquareRow);
@@ -54,7 +51,7 @@ var PixelBoard = function() {
 };
 
 Board = new PixelBoard();
-Board.GenerateSquares(25);
+Board.GenerateSquares(Math.ceil(canvas.height / 35), Math.ceil(canvas.width / 35));
 
 setInterval(function() {
     Board.GenerateValues();
