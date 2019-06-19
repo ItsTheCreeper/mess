@@ -4,10 +4,13 @@ var Board;
 var PixelBoard = function() {
     this.SquareArray = [];
     this.SquareRow = [];
-    this.GenerateSquares = function(Height, Length) {
-        for (var i = 0; i < Height; i++) {
+    this.GenerateSquares = function(Count) {
+        if (Count > 25) {
+            Count = 25;
+        }
+        for (var i = 0; i < Count; i++) {
             this.SquareRow = [];
-            for (var j = 0; j < Length; j++) {
+            for (var j = 0; j < Count; j++) {
                 this.SquareRow.push(0);
             }
             this.SquareArray.push(this.SquareRow);
@@ -32,12 +35,13 @@ var PixelBoard = function() {
                  } else {
                      ctx.fillStyle = "white";
                  }
+                 ctx.lineWidth = 5;
                  ctx.fillRect(x, y, 25, 25);
                  ctx.stroke();
-                 x += 25;
+                 x += 35;
             }
-            y += 25;
-            x = 0;
+            y += 35;
+                x = 0;
         }
     };
     this.Color = function() {
@@ -50,9 +54,9 @@ var PixelBoard = function() {
 };
 
 Board = new PixelBoard();
-Board.GenerateSquares(Math.ceil(canvas.height / 25), Math.ceil(canvas.width / 25));
+Board.GenerateSquares(25);
 
 setInterval(function() {
     Board.GenerateValues();
     Board.Display();
-}, 0);
+}, 100);
